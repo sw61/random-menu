@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
+
+import MainPage from "./components/MainPage";
+import RcmPage from "./components/RcmPage";
+import MainLayout from "./Layout/MainLayout";
+import BreakList from "./components/BreakList";
+import LunchList from "./components/LunchList";
+import DinnerList from "./components/DinnerList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/search" element={<MainLayout />}>
+            <Route path="/search/:id" element={<BreakList />} />
+            <Route path="/search/:id" element={<LunchList />} />
+            <Route path="/search/:id" element={<DinnerList />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
