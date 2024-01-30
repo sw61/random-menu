@@ -14,9 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/search" element={<MainLayout />}>
-            <Route path="/search/:id" element={<BreakList />} />
-            <Route path="/search/:id" element={<LunchList />} />
-            <Route path="/search/:id" element={<DinnerList />} />
+            <Route path="/search/1" element={<BreakList />} />
+            <Route path="/search/2" element={<LunchList />} />
+            <Route path="/search/3" element={<DinnerList />} />
           </Route>
         </Routes>
       </BrowserRouter>

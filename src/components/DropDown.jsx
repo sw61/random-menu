@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 const DropDown = ({ days, setIsOpen }) => {
   const navigate = useNavigate();
-  const movePage = () => {
-    navigate(`/search/${days.time}`);
+  const movePage = (id) => {
+    navigate(`/search/${id}`);
   };
+
   return (
     <DropList>
       {days.map((day) => (
@@ -12,7 +13,7 @@ const DropDown = ({ days, setIsOpen }) => {
           key={day.id}
           onClick={() => {
             setIsOpen(false);
-            movePage();
+            movePage(day.id);
           }}
         >
           {day.day}

@@ -1,17 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
 
 import DropDown from "./DropDown";
 
 const RcmPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [days, setDays] = useState([
-    { id: 1, day: "아침", time: "Break" },
-    { id: 2, day: "점심", time: "Lunch" },
-    { id: 3, day: "저녁", time: "Dinner" },
+    { id: 1, day: "아침" },
+    { id: 2, day: "점심" },
+    { id: 3, day: "저녁" },
   ]);
-  const { asd } = useParams();
+
   return (
     <RcmWrapper>
       <DropDownWrapper>
@@ -20,8 +19,6 @@ const RcmPage = () => {
         </DropHeader>
         {isOpen && <DropDown days={days} setIsOpen={setIsOpen} />}
       </DropDownWrapper>
-
-      <ButtonText>추천 메뉴</ButtonText>
       <ButtonText>
         <a href="https://www.naver.com/" target="_blank">
           메뉴 보러 가기

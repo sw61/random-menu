@@ -2,7 +2,7 @@ import Breakfast from "../jsons/Breakfast.json";
 const BreakList = () => {
   return (
     <>
-      {Breakfast.breakfast.map((item) => {
+      {Breakfast.map((item) => {
         return (
           <div>
             <img src={item.imgUrl}></img>

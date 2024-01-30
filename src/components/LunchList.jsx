@@ -2,7 +2,7 @@ import Lunch from "../jsons/Lunch.json";
 const LunchList = () => {
   return (
     <>
-      {Lunch.lunch.map((item) => {
+      {Lunch.map((item) => {
         return (
           <div>
             <img src={item.imgUrl} />
