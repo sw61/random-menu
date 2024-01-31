@@ -34,4 +34,5 @@ const DropText = styled.div`
   background-color: #7077a1;
   cursor: pointer;
   border: 1px solid black;
+  border-radius: 5px;
 `;

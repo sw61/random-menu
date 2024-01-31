@@ -12,24 +12,16 @@ const RcmPage = () => {
   ]);
 
   return (
-    <RcmWrapper>
-      <DropDownWrapper>
-        <DropHeader onClick={() => setIsOpen(!isOpen)}>
-          아침 / 점심 / 저녁 선택
-        </DropHeader>
-        {isOpen && <DropDown days={days} setIsOpen={setIsOpen} />}
-      </DropDownWrapper>
-      <ButtonText>
-        <a href="https://www.naver.com/" target="_blank">
-          메뉴 보러 가기
-        </a>
-      </ButtonText>
-    </RcmWrapper>
+    <DropDownWrapper>
+      <DropHeader onClick={() => setIsOpen(!isOpen)}>
+        아침 / 점심 / 저녁 선택
+      </DropHeader>
+      {isOpen && <DropDown days={days} setIsOpen={setIsOpen} />}
+    </DropDownWrapper>
   );
 };
 export default RcmPage;
 
-const RcmWrapper = styled.div``;
 const DropDownWrapper = styled.div``;
 const DropHeader = styled.div`
   display: flex;
@@ -40,12 +32,6 @@ const DropHeader = styled.div`
   color: #e1e1e1;
   background-color: #7077a1;
   border: 1px solid black;
-  cursor: pointer;
-`;
-const ButtonText = styled.button`
-  background-color: #7077a1;
-  color: #e1e1e1;
-  border: none;
-  border: 1px solid black;
+  border-radius: 5px;
   cursor: pointer;
 `;
