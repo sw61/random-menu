@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import Dinner from "../jsons/Dinner.json";
+import Menus from "./Menus.json";
+
 const DinnerList = () => {
   const detailUrl =
     "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=";
   return (
     <MenuWrapper>
-      {Dinner.map((item) => {
+      {Menus.dinner.map((item) => {
         return (
           <MenuCard>
             <ImgBox src={item.imgUrl}></ImgBox>

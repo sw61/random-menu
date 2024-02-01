@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import Lunch from "../jsons/Lunch.json";
+import Menus from "./Menus.json";
+
 const LunchList = () => {
   const detailUrl =
     "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=";
   return (
     <MenuWrapper>
-      {Lunch.map((item) => {
+      {Menus.lunch.map((item) => {
         return (
           <MenuCard>
             <ImgBox src={item.imgUrl}></ImgBox>
