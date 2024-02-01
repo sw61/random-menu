@@ -11,6 +11,8 @@ const MainPage = () => {
     setMeal(menuList[randNum]);
   };
   const navigate = useNavigate();
+  const detailUrl =
+    "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=";
 
   return (
     <MainWrapper>
@@ -28,6 +30,11 @@ const MainPage = () => {
           </RandomMenu>
         )}
       </MenuCard>
+      {meal && (
+        <NaverSearch href={detailUrl + meal.menu} target="_blank">
+          네이버 검색
+        </NaverSearch>
+      )}
       <DetailBtn onClick={() => navigate("/search")}>
         메뉴 리스트 보러가기
       </DetailBtn>
@@ -91,7 +98,19 @@ const MenuText = styled.span`
   align-items: center;
   color: #e1e1e1;
   font-weight: bold;
+  width: 450px;
   height: 40px;
+  background-color: #7077a1;
+`;
+const NaverSearch = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  background-color: #7077a1;
+  color: #e1e1e1;
+  text-decoration: none;
 `;
 const DetailBtn = styled.button`
   background-color: #7077a1;
