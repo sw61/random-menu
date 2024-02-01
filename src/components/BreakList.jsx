@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Menus from "./Menus.json";
-import Breakfast from "../jsons/Breakfast.json";
+
 const BreakList = () => {
   const detailUrl =
     "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=";

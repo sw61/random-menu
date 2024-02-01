@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Breakfast from "../jsons/Breakfast.json";
-import Lunch from "../jsons/Lunch.json";
-import Dinner from "../jsons/Dinner.json";
+import Menus from "./Menus.json";
 
 const MainPage = () => {
   const [meal, setMeal] = useState();
 
   const changeMeal = (menuList) => {
-    const randNum = Math.round(Math.random() * Breakfast.length);
+    const randNum = Math.round(Math.random() * Menus.breakfast.length);
     setMeal(menuList[randNum]);
   };
   const navigate = useNavigate();
@@ -18,9 +16,9 @@ const MainPage = () => {
     <MainWrapper>
       <MainHeader>랜덤 메뉴 추천</MainHeader>
       <BtnWrap>
-        <BtnText onClick={() => changeMeal(Breakfast)}>아침</BtnText>
-        <BtnText onClick={() => changeMeal(Lunch)}>점심</BtnText>
-        <BtnText onClick={() => changeMeal(Dinner)}>저녁</BtnText>
+        <BtnText onClick={() => changeMeal(Menus.breakfast)}>아침</BtnText>
+        <BtnText onClick={() => changeMeal(Menus.lunch)}>점심</BtnText>
+        <BtnText onClick={() => changeMeal(Menus.dinner)}>저녁</BtnText>
       </BtnWrap>
       <MenuCard>
         {meal && (
